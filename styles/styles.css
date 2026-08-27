@@ -319,6 +319,11 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
+  background-color: var(--dark-color);
+  margin: 0;
+  padding: 40px 0;
+}
+main .section.greybg {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
