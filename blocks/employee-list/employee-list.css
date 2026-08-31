@@ -1,0 +1,79 @@
+.employee-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.employee-list-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.employee-list-item {
+  margin: 0;
+}
+
+.employee-card {
+  height: 100%;
+  padding: 1.25rem;
+  background: var(--background-color, #fff);
+  border: 1px solid #d9d9d9;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.employee-name {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-color, #1d1d1d);
+}
+
+.employee-details {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.employee-department,
+.employee-city,
+.employee-list-empty {
+  margin: 0;
+  color: var(--text-color, #4a4a4a);
+  line-height: 1.5;
+}
+
+.employee-list-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.employee-list-load-more {
+  border: 0;
+  border-radius: 999px;
+  background: var(--link-color, #005ea8);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.employee-list-load-more:hover,
+.employee-list-load-more:focus-visible {
+  opacity: 0.9;
+}
+
+.employee-list-load-more:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.employee-list-empty {
+  padding: 1rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.75rem;
+}
