@@ -1,0 +1,95 @@
+.dynamic-list__items {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dynamic-list__item {
+  min-width: 0;
+}
+
+.dynamic-list__card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+}
+
+.dynamic-list__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.dynamic-list__content {
+  padding: 20px;
+}
+
+.dynamic-list__date {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.dynamic-list__title {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.dynamic-list__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dynamic-list__title a:hover,
+.dynamic-list__title a:focus {
+  text-decoration: underline;
+}
+
+.dynamic-list__description {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+.dynamic-list__status {
+  margin: 0 0 16px;
+}
+
+.dynamic-list__load-more {
+  display: block;
+  margin: 24px auto 0;
+  padding: 12px 20px;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.dynamic-list__load-more:hover,
+.dynamic-list__load-more:focus {
+  background: #444;
+}
+
+.dynamic-list__load-more[hidden] {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .dynamic-list__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .dynamic-list__items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
