@@ -1,0 +1,14 @@
+{
+  "type": "da",
+  "sites": {
+    "anuj-eds-test": {
+      "previewOrg": "patel-anujshiva",
+      "previewSite": "anuj-eds-test",
+      "contentHostUrl": "https://content.da.live/patel-anujshiva/anuj-eds-test/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "features": [
+    "site-planning"
+  ]
+}

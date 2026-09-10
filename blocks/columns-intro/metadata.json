@@ -1,0 +1,43 @@
+{
+  "variantName": "columns-intro",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-09-08T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/about-us",
+    "originPage": "about-us landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "hero-intro",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading + 2 CTAs | image group",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "page intro with text + image group",
+      "two-column hero-style intros without background image"
+    ],
+    "notSuitableFor": [
+      "background-image hero banners",
+      "repeating card grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/about-us",
+      "/index",
+      "/blog",
+      "/faq",
+      "/fashion-trends-young-adults-casual-sport"
+    ],
+    "reuseCount": 5,
+    "lastUsed": "2026-09-09T12:06:00.000Z"
+  }
+}

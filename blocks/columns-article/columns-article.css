@@ -1,0 +1,70 @@
+/* Block: columns-article — image + article heading/meta, two-column media+text layout */
+
+/* Values extracted from source computed styles (wknd-trendsetters.site/about-us). */
+
+/* Row: mobile-first single column, image stacked on top */
+.columns-article > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-article > div > div {
+  order: 1;
+}
+
+.columns-article > div > .columns-article-img-col {
+  order: 0;
+}
+
+/* Image — cover 3:2 with rounded corners */
+.columns-article img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Heading */
+.columns-article h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Author / date meta lines */
+.columns-article > div > div p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--link-color);
+}
+
+.columns-article > div > div h2 + p {
+  margin-top: 16px;
+}
+
+.columns-article > div > div p + p {
+  margin-top: 8px;
+}
+
+@media (width >= 900px) {
+  .columns-article > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .columns-article > div > div {
+    order: unset;
+  }
+}

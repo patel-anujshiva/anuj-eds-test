@@ -1,0 +1,40 @@
+{
+  "variantName": "tabs-profile",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-09-08T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site/about-us",
+    "originPage": "about-us landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "profile-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab label (avatar + name + role) | panel (image + name + role + quote)",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "person/profile showcases switched by tabs",
+      "testimonial panels with tabbed navigation"
+    ],
+    "notSuitableFor": [
+      "simple text-only tab switchers",
+      "non-interactive content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "/about-us",
+      "/index"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-09T11:39:28.426Z"
+  }
+}
