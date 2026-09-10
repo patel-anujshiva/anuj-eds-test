@@ -143,6 +143,37 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies Section Metadata to its parent section as classes/data attributes,
+ * then removes the metadata block so its key/value text does not render as
+ * visible content. The vendored aem.js decorateSections does not do this.
+ * @param {Element} main The container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    [...meta.children].forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length < 2) return;
+      const key = cells[0].textContent.trim().toLowerCase();
+      const value = cells[1].textContent.trim();
+      if (!key || !value) return;
+      if (key === 'style') {
+        value.split(',').forEach((s) => {
+          const cls = s.trim().toLowerCase().replace(/\s+/g, '-');
+          if (cls) section.classList.add(cls);
+        });
+      } else {
+        section.dataset[key.replace(/-([a-z])/g, (_, c) => c.toUpperCase())] = value;
+      }
+    });
+    // remove the metadata block and its wrapper so no text leaks
+    const wrapper = meta.closest('.section-metadata-wrapper') || meta;
+    wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -151,6 +182,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
 }
@@ -199,7 +231,7 @@ async function loadLazy(doc) {
   loadFonts();
   const loadQuickEdit = async (...args) => {
     // eslint-disable-next-line import/no-cycle
-    const { default: initQuickEdit } = await import('../tools/quick-edit/quick-edit.js');
+    const { default: initQuickEdit } = await import('../tools/quick-edit.js');
     initQuickEdit(...args);
   };
 
@@ -222,9 +254,8 @@ async function loadLazy(doc) {
 (() => {
   const hasQE = new URL(window.location.href).searchParams.has('quick-edit');
   // eslint-disable-next-line import/no-cycle
-  if (hasQE) import('../tools/quick-edit/quick-edit.js').then((mod) => mod.default());
+  if (hasQE) import('../tools/quick-edit.js').then((mod) => mod.default());
 })();
-
 
 /**
  * Loads everything that happens a lot later,

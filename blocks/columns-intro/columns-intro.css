@@ -1,0 +1,94 @@
+/* Block: columns-intro
+ * Two-column intro: text (heading + subheading + buttons) beside an image grid.
+ * Values extracted from source computed styles (wknd-trendsetters.site/about-us).
+ */
+
+/* Row: single row holding the text cell + image cell */
+.columns-intro > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-intro p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: 28.8px;
+  color: var(--text-color);
+  margin: 24px 0 0;
+}
+
+/* Image cell: 3 pictures live inside a single paragraph */
+.columns-intro-img-col p {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+}
+
+/* Button group (two links inside a single paragraph) */
+.columns-intro p:has(> a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.columns-intro p > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid var(--text-color);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+/* First link = primary (filled) */
+.columns-intro p > a:first-child {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Subsequent links = secondary (outline) */
+.columns-intro p > a:not(:first-child) {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+.columns-intro p > a:first-child:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.columns-intro p > a:not(:first-child):hover {
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+.columns-intro-img-col picture {
+  display: block;
+}
+
+.columns-intro img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .columns-intro > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .columns-intro > div > div {
+    flex: 1;
+  }
+}

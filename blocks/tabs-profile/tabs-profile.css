@@ -1,0 +1,137 @@
+/* Block: tabs-profile — tabbed profile showcase (avatar tab menu + content panel) */
+
+.tabs-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Content panels (image + text) --- */
+.tabs-profile .tabs-profile-content {
+  display: block;
+}
+
+.tabs-profile .tabs-profile-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.tabs-profile .tabs-profile-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-profile .tabs-profile-image {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.tabs-profile .tabs-profile-image picture,
+.tabs-profile .tabs-profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabs-profile .tabs-profile-text {
+  display: block;
+}
+
+.tabs-profile .tabs-profile-name {
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-role {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-quote {
+  margin: 32px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+/* --- Tab menu (avatar buttons) --- */
+.tabs-profile .tabs-profile-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.tabs-profile .tabs-profile-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgb(232 232 232);
+  border-radius: 16px;
+  background-color: rgb(239 239 239);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.tabs-profile .tabs-profile-tab[aria-selected='true'] {
+  border-color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+.tabs-profile .tabs-profile-avatar {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.tabs-profile .tabs-profile-avatar img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.tabs-profile .tabs-profile-tab-labels {
+  display: block;
+  min-width: 0;
+}
+
+.tabs-profile .tabs-profile-tab-name {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22.4px;
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-tab-role {
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.4px;
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .tabs-profile .tabs-profile-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tabs-profile .tabs-profile-menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

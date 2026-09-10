@@ -1,0 +1,83 @@
+/* Block: columns-contact
+ * Two-column, text-only layout: heading + paragraph beside a stacked list of
+ * label/value contact detail groups (Email / Phone / Address). No images.
+ * Patterned on columns-intro; values follow the site design tokens.
+ */
+
+/* Row: mobile-first single column, intro stacked above contact list */
+.columns-contact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-contact-intro h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.columns-contact-intro p {
+  margin: 24px 0 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Contact list: stacked label/value groups */
+.columns-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columns-contact-item h2,
+.columns-contact-item h3,
+.columns-contact-item h4,
+.columns-contact-item h5,
+.columns-contact-item h6 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--link-color);
+}
+
+.columns-contact-item p,
+.columns-contact-item a {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l, var(--body-font-size-m));
+  line-height: 1.5;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.columns-contact-item a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .columns-contact > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+  }
+
+  .columns-contact > div > div {
+    flex: 1;
+  }
+}
